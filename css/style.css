@@ -1,0 +1,331 @@
+/* Importando fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700&display=swap');
+
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Área principal */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Controles do jogo */
+#game-controls {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.control-group label {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 1.1em;
+}
+
+#difficulty {
+    padding: 10px 15px;
+    border: 3px solid #ff6b6b;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#difficulty:hover {
+    border-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+#start-button, #play-again {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+#start-button:hover, #play-again:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Tabuleiro do jogo */
+#game-board {
+    display: grid;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* Configurações de grid para diferentes níveis */
+#game-board.basic {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(2, 80px);
+}
+
+#game-board.intermediate {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(3, 80px);
+}
+
+#game-board.advanced {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+}
+
+/* Cartas */
+.card {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    opacity: 1;
+    cursor: default;
+    animation: bounce 0.6s ease;
+    transform: rotateY(180deg) !important;
+}
+
+.card.matched:hover {
+    transform: rotateY(180deg) !important;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% { transform: rotateY(180deg) translateY(0); }
+    40% { transform: rotateY(180deg) translateY(-10px); }
+    80% { transform: rotateY(180deg) translateY(-5px); }
+}
+
+.card .front-face, .card .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 2em;
+}
+
+.card .front-face {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    transform: rotateY(180deg);
+    border: 3px solid #ff6b6b;
+}
+
+.card .back-face {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.5em;
+    border: 3px solid #4a5568;
+}
+
+/* Resultado do jogo */
+#game-result {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#game-result h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2em;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+#game-result p {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Rodapé */
+footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.developer-info {
+    text-align: left;
+}
+
+.developer-info p {
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#fmp-logo {
+    max-height: 60px;
+    width: auto;
+    filter: brightness(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    #game-controls {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #game-board.basic {
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(2, 70px);
+    }
+    
+    #game-board.intermediate {
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(3, 70px);
+    }
+    
+    #game-board.advanced {
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(4, 70px);
+    }
+    
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-board.basic {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(2, 60px);
+    }
+    
+    #game-board.intermediate {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(3, 60px);
+    }
+    
+    #game-board.advanced {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(4, 60px);
+    }
+    
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
