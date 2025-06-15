@@ -2,7 +2,7 @@
 
 ## 📋 Descrição do Projeto
 
-Este é um **Jogo da Memória** desenvolvido especificamente para crianças de 4 a 9 anos, com design colorido e interface intuitiva. O projeto foi criado para a **Faculdade Municipal da Palhoça (FMP)** pelo time **ADS**.
+Este é um **Jogo da Memória** desenvolvido especificamente para crianças de 4 a 9 anos, com design colorido e interface intuitiva. O projeto foi criado pela **Faculdade Municipal da Palhoça (FMP)** pelo turma de **ADS**.
 
 ## ✨ Características Principais
 
