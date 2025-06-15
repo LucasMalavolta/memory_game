@@ -32,8 +32,7 @@ Este é um **Jogo da Memória** desenvolvido especificamente para crianças de 4
 
 ```
 jogo_memoria/
-├── html/
-│   └── index.html          # Página principal do jogo
+├──  index.html             # Página principal do jogo
 ├── css/
 │   └── style.css           # Estilos e design responsivo
 ├── js/
@@ -41,15 +40,13 @@ jogo_memoria/
 ├── images/
 │   ├── fmp_logo.png        # Logo da FMP
 │   ├── card_animal_1.png   # Imagens de referência
-│   ├── card_animal_2.jpg   # (para futuras expansões)
-│   └── card_animal_3.jpg
 └── relatorio_testes.md     # Relatório de testes realizados
 ```
 
 ## 🚀 Como Usar
 
 1. **Abrir o Jogo:**
-   - Abra o arquivo `html/index.html` em qualquer navegador web
+   - Abra o arquivo `index.html` em qualquer navegador web
 
 2. **Escolher Nível:**
    - Selecione o nível de dificuldade desejado no menu dropdown
@@ -94,7 +91,7 @@ jogo_memoria/
 Não é necessária instalação. Basta:
 
 1. Extrair os arquivos do projeto
-2. Abrir o arquivo `html/index.html` em um navegador
+2. Abrir o arquivo `index.html` em um navegador
 3. Começar a jogar!
 
 ---
