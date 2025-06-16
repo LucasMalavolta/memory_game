@@ -160,6 +160,49 @@ function stopTimer() {
     }
 }
 
+// Função para obter mensagem de feedback baseada no tempo e dificuldade
+function getFeedbackMessage(timeInSeconds, difficulty) {
+    const messages = {
+        basic: {
+            excellent: "⭐️⭐️⭐️ Uau! Você é super rápido! Esse jogo tá muito fácil pra você, bora tentar o próximo desafio.",
+            good: "⭐️⭐️ Ótimo! Tá indo muito bem. Se treinar mais, vai ficar rapidinho igual um foguete.",
+            normal: "⭐️ Muito bem! Você tá ficando cada vez melhor! Continue treinando sua memória."
+        },
+        intermediate: {
+            excellent: "⭐️⭐️⭐️ Uhuu! Que memória incrível! Esse nível ficou fácil pra você, bora tentar o avançado.",
+            good: "⭐️⭐️ Muito bem! Só mais um pouco e você vai bater seu recorde.",
+            normal: "⭐️ Muito bom! Sua memória tá ficando mais forte! Continue assim."
+        },
+        advanced: {
+            excellent: "⭐️⭐️⭐️ Nossa! Você é um mestre da memória! Tá jogando muito rápido! Será que não tem superpoder escondido aí, hein?",
+            good: "⭐️⭐️ Tá indo muito bem! Esse é o desafio dos campeões, e você tá ficando craque.",
+            normal: "⭐️ Muito bom! Esse é um desafio bem difícil e você tá mandando muito bem! Continue treinando."
+        }
+    };
+
+    let messageType;
+    
+    switch(difficulty) {
+        case 'basic':
+            if (timeInSeconds <= 20) messageType = 'excellent';
+            else if (timeInSeconds <= 30) messageType = 'good';
+            else messageType = 'normal';
+            break;
+        case 'intermediate':
+            if (timeInSeconds <= 30) messageType = 'excellent';
+            else if (timeInSeconds <= 45) messageType = 'good';
+            else messageType = 'normal';
+            break;
+        case 'advanced':
+            if (timeInSeconds < 60) messageType = 'excellent';
+            else if (timeInSeconds <= 90) messageType = 'good';
+            else messageType = 'normal';
+            break;
+    }
+    
+    return messages[difficulty][messageType];
+}
+
 // Função para terminar o jogo
 function endGame() {
     gameStarted = false;
@@ -168,9 +211,26 @@ function endGame() {
     const elapsed = Date.now() - startTime;
     const minutes = Math.floor(elapsed / 60000);
     const seconds = Math.floor((elapsed % 60000) / 1000);
+    const totalSeconds = Math.floor(elapsed / 1000);
     const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     
+    // Obter mensagem de feedback personalizada
+    const feedbackMessage = getFeedbackMessage(totalSeconds, currentDifficulty);
+    
     finalTimeDisplay.textContent = timeString;
+    
+    // Atualizar o resultado com a mensagem personalizada
+    const resultSection = document.getElementById('game-result');
+    resultSection.innerHTML = `
+        <h2>🎉 Parabéns! 🎉</h2>
+        <p>Você completou o jogo em <strong>${timeString}</strong>!</p>
+        <p class="feedback-message">${feedbackMessage}</p>
+        <button id="play-again">🔄 Jogar Novamente</button>
+    `;
+    
+    // Reativar o event listener do botão "Jogar Novamente"
+    document.getElementById('play-again').addEventListener('click', resetGame);
+    
     gameResult.classList.remove('hidden');
 }
 
