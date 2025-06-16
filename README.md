@@ -74,7 +74,9 @@ jogo_memoria/
 ## 🎓 Informações Acadêmicas
 
 - **Instituição:** Faculdade Municipal da Palhoça (FMP)
-- **Desenvolvedores:** Lucas Malavolta Felix
+- **Desenvolvedores:**
+- Andressa Caetano
+- Lucas Malavolta Felix
 - **Público-Alvo:** Crianças de 4 a 9 anos
 - **Objetivo:** Desenvolver memória e coordenação motora através de jogos educativos
 
