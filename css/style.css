@@ -329,3 +329,18 @@ footer {
 }
 
 
+
+/* Estilo para mensagem de feedback */
+.feedback-message {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    border: 3px solid #ff6b6b;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+    text-align: center;
+    line-height: 1.4;
+}
