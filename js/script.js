@@ -144,7 +144,7 @@ function shuffleArray(array) {
     }
 }
 
-// Função para iniciar o timer (sem exibir durante o jogo)
+// Função para iniciar o timer
 function startTimer() {
     // Timer roda em background sem exibir na tela
     gameTimer = setInterval(() => {
@@ -263,7 +263,6 @@ function resetGame() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
-    // O jogo está pronto para ser iniciado
     console.log('Jogo da Memória carregado!');
 });
 
