@@ -31,7 +31,7 @@ Este é um **Jogo da Memória** desenvolvido especificamente para crianças de 4
 o próximo desafio."
   - 21-30 segundos:
 - ⭐️⭐️ "Ótimo! Tá indo muito bem. Se treinar mais, vai ficar rapidinho igual um foguete."
-  - > 30 segundos:
+  - maior que 30 segundos:
 - ⭐️ "Muito bem! Você tá ficando cada vez melhor! Continue treinando sua memória."
 
 - ⭐ Nível Intermediário (4x3)
@@ -39,15 +39,15 @@ o próximo desafio."
 - ⭐️⭐️⭐️ "Uhuu! Que memória incrível! Esse nível ficou fácil pra você, bora tentar o avançado."
   - 31-45 segundos:
 - ⭐️⭐️ "Muito bem! Só mais um pouco e você vai bater seu recorde."
-  - > 45 segundos:
+  - maior que 45 segundos:
 - ⭐️ "Muito bom! Sua memória tá ficando mais forte! Continue assim."
 
 - 🏆 Nível Avançado (4x4)
-  - < 60 segundos:
+  - ≤ 60 segundos:
 - ⭐️⭐️⭐️ "Nossa! Você é um mestre da memória! Tá jogando muito rápido! Será que não tem superpoder escondido aí, hein?"
   - 60-90 segundos:
 - ⭐️⭐️ "Tá indo muito bem! Esse é o desafio dos campeões, e você tá ficando craque."
-  - > 90 segundos:
+  - maior 90 segundos:
 - ⭐️ "Muito bom! Esse é um desafio bem difícil e você tá mandando muito bem! Continue treinando."
 
 ### 🏢 Identidade Institucional
