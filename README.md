@@ -17,9 +17,9 @@ Este é um **Jogo da Memória** desenvolvido especificamente para crianças de 4
 - **🔄 Função Jogar Novamente:** Permite reiniciar o jogo facilmente
 
 ### 🎨 Design Infantil
-- **Cores Vibrantes:** Gradientes coloridos que atraem a atenção das crianças
+- **Cores Amigáveis:** Gradientes coloridos que atraem a atenção das crianças
 - **Emojis Divertidos:** Animais e objetos familiares para as crianças
-- **Fontes Amigáveis:** Typography adequada para a faixa etária
+- **Fontes Leves:** Typography adequada para a faixa etária
 - **Animações Suaves:** Efeitos de hover e transições agradáveis
 - **Layout Responsivo:** Funciona em computadores, tablets e celulares
 
